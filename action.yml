@@ -16,8 +16,4 @@ runs:
   steps: 
     - shell: bash
       working-directory: ${{ github.action_path }}
-      run: sudo ./setup.sh
-      env:
-        CONFIG: ${{ inputs.defined-config }}
-        VERSION: ${{ inputs.dnclient-version }}
-
+      run: sudo ./setup.sh "${{ inputs.dnclient-version }}" "${{ inputs.defined-config }}"

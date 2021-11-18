@@ -1,14 +1,16 @@
 #!/bin/bash
 
+# usage: ./setup.sh <version> <base64 config>
+
 echo "Create defined dir"
 mkdir -p /etc/defined
 
 echo "Download dnclient"
-curl -L https://dl.defined.net/$VERSION/linux/amd64/dnclient -o /etc/defined/dnclient
+curl -L https://dl.defined.net/$1/linux/amd64/dnclient -o /etc/defined/dnclient
 chmod +x /etc/defined/dnclient
 
 echo "Install config"
-echo $CONFIG | base64 -d > /etc/defined/config.yml
+echo $2 | base64 -d > /etc/defined/config.yml
 
 echo "Install service file"
 cp defined.service /etc/systemd/system/
