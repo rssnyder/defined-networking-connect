@@ -10,7 +10,7 @@ sudo chmod +x /etc/defined/dnclient
 
 # Install config
 
-sudo echo $CONFIG > /etc/defined/config.yml
+echo $CONFIG | sudo tee /etc/defined/config.yml
 
 # Install service file
 
