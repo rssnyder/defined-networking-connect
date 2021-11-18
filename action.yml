@@ -1,0 +1,19 @@
+name: 'defined-networking-connect'
+description: 'Connect to a Defined Networking network'
+branding:
+  icon: bar-chart
+  color: blue
+inputs:
+  defined-config:
+    description: 'defined networking enrollment code'
+    required: true
+  dnclient-version:
+    description: 'version of dnclient to use'
+    required: false
+    default: cce733c1/v0.0.8
+runs:
+  using: "composite"
+  steps: 
+    - shell: bash
+      working-directory: ${{ github.action_path }}
+      run: sudo ./setup.sh "${{ inputs.dnclient-version }}" "${{ inputs.defined-config }}"
