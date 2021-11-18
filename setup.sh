@@ -1,21 +1,18 @@
 #!/bin/bash
 
+echo "Create defined dir"
 sudo mkdir -p /etc/defined
 
-# Download dnclient
-
+echo "Download dnclient"
 sudo curl -L https://dl.defined.net/$VERSION/linux/amd64/dnclient -o /etc/defined/dnclient
-
 sudo chmod +x /etc/defined/dnclient
 
-# Install config
-
+echo "Install config"
 echo $CONFIG | sudo tee /etc/defined/config.yml
 
-# Install service file
-
+echo "Install service file"
 sudo cp defined.service /etc/systemd/system/
-
 sudo systemctl daemon-reload
-
 sudo systemctl start defined.service
+
+ip addr | grep -A3 nebula99
