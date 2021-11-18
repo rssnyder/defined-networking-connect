@@ -8,7 +8,7 @@ sudo curl -L https://dl.defined.net/$VERSION/linux/amd64/dnclient -o /etc/define
 sudo chmod +x /etc/defined/dnclient
 
 echo "Install config"
-echo $CONFIG | sudo tee /etc/defined/config.yml
+echo $CONFIG | base64 -d | sudo tee /etc/defined/config.yml
 
 echo "Install service file"
 sudo cp defined.service /etc/systemd/system/
