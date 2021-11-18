@@ -6,11 +6,11 @@ sudo mkdir -p /etc/defined
 
 sudo curl -L https://dl.defined.net/$VERSION/linux/amd64/dnclient -o /etc/defined/dnclient
 
-chmod +x /etc/defined/dnclient
+sudo chmod +x /etc/defined/dnclient
 
 # Install config
 
-echo $CONFIG > /etc/defined/config.yml
+sudo echo $CONFIG > /etc/defined/config.yml
 
 # Install service file
 
