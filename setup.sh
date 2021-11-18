@@ -15,4 +15,8 @@ sudo cp defined.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl start defined.service
 
+echo "Show some systemd info"
+systemctl status defined | head -n 8
+
+echo "Show interface information"
 ip addr | grep -A3 nebula99
