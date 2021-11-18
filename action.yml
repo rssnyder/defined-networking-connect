@@ -4,7 +4,7 @@ branding:
   icon: bar-chart
   color: blue
 inputs:
-  enrollment-code:
+  defined-config:
     description: 'defined networking enrollment code'
     required: true
   dnclient-version:
@@ -18,5 +18,6 @@ runs:
       working-directory: ${{ github.action_path }}
       run: ./setup.sh
       env:
-        CODE: ${{ inputs.enrollment-code }}
+        CONFIG: ${{ inputs.defined-config }}
+        VERSION: ${{ inputs.dnclient-version }}
 

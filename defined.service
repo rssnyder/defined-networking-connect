@@ -9,7 +9,7 @@ SyslogIdentifier=defined
 StandardOutput=syslog
 StandardError=syslog
 ExecReload=/bin/kill -HUP $MAINPID
-ExecStart=/etc/defined/dnclient
+ExecStart=/etc/defined/dnclient run
 Restart=always
 
 [Install]
