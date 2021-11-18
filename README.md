@@ -4,7 +4,8 @@ connect to a defined networking network in your actions workflow
 
 ## inputs
 
-- defined-config: the yaml config for your node; get this by configuring a test node first and copying the config
+- defined-config: base64 encoded yaml config for your node; get this by configuring a test node first and copying the config
+  - how-to: `echo $CONFIG | base64 -w0`
 - dnclient-version: the version of the dnclient to use; needs the prefix found in the url
 
 ## usage
